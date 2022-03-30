@@ -1,0 +1,110 @@
+<style>
+  .card {
+    height: 150px;
+    width: 350px;
+    overflow: hidden;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(245, 241, 241, 0.788);
+    transition: 0.3s;
+    border-color: aliceblue;
+    background-color: aliceblue;
+    position: relative;
+  }
+  .card-item:hover {
+    box-shadow: 0 8px 16px 0 rgb(248, 246, 246);
+  }
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+
+  hr {
+    color: rgb(255, 255, 255, 10);
+    height: 4px;
+    width: 350px;
+    margin-top: 80px;
+    bottom: 35px;
+    z-index: 10;
+  }
+  .myicon {
+    width: 17px;
+    height: 17px;
+    background-color: rgb(250, 218, 131);
+    position: initial;
+    display: inline-block;
+    padding-right: 15px;
+    margin-right: 10px;
+  }
+
+  .myicon::before {
+    content: "+";
+    height: 17px;
+    width: 17px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: courier;
+    color: white;
+  }
+  #takip {
+    width: 170px;
+    height: 35px;
+    background-color: rgb(174, 170, 167, 0.8);
+    border-radius: 25px;
+    padding-top: 2px;
+    border-color: rgb(174, 170, 167, 0.3);
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+</style>
+
+<div class="card bg-dark text-white">
+  <img
+    src="{{ post.imageUrl }}"
+    class="card-img"
+    alt="..."
+    ngModel
+    name="imgUrl"
+  />
+
+  <div class="card-img-overlay">
+    <hr />
+    <div [ngSwitch]="post.follow" *ngIf="post.followbutton == true">
+      <button
+        *ngSwitchCase="true"
+        type="button"
+        class="btn btn-secondary"
+        id="takip"
+        ngModelname="followButton"
+        (click)="bfunction()"
+      >
+        <div class="myicon"></div>
+        Takip Et
+      </button>
+      <button
+        *ngSwitchCase="false"
+        type="button"
+        class="btn btn-secondary"
+        id="takip"
+        ngModelname="followButton"
+        (click)="bfunction()"
+      >
+        <div class="myicon"></div>
+        Takip Edildi.
+      </button>
+    </div>
+
+    <div
+      class="bottom-left"
+      style="font: 30px Arial, sans-serif; font-weight: 300"
+      ngModelname="clubName"
+    >
+      {{ post.title }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<style>
+  .card {
+    height: 150px;
+    width: 350px;
+    overflow: hidden;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(245, 241, 241, 0.788);
+    transition: 0.3s;
+    border-color: aliceblue;
+    background-color: aliceblue;
+  }
+  .card-item:hover {
+    box-shadow: 0 8px 16px 0 rgb(248, 246, 246);
+  }
+  .bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+
+  hr {
+    color: rgb(255, 255, 255, 10);
+    height: 4px;
+    width: 350px;
+    margin-top: 80px;
+    bottom: 35px;
+    z-index: 10;
+  }
+</style>
+
+<div class="card bg-dark text-white">
+  <img src="/assets/dag.jpg" class="card-img" alt="..." />
+  <div class="card-img-overlay">
+    <hr />
+    <div
+      class="bottom-left"
+      style="font: 30px Arial, sans-serif; font-weight: 300"
+    >
+      Dağcılık
+    </div>
+  </div>
+</div>
